@@ -9,8 +9,9 @@ CORPUS = {
     "monitoring": ["Metrics detect incidents, logs identify affected requests, traces localize the root cause."],
     "policy": ["Do not expose PII in logs. Use sanitized summaries only."],
 }
+from .tracing import observe
 
-
+@observe(name="retrieve", as_type="span")
 def retrieve(message: str) -> list[str]:
     if STATE["tool_fail"]:
         raise RuntimeError("Vector store timeout")

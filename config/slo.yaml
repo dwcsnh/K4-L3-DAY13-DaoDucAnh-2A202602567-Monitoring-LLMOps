@@ -7,7 +7,7 @@ primary_slo:
     total_event: 'event == "request_received"'
   target_percent: 99.5
   error_budget_percent: 0.5
-  note: Học viên phải giải thích hoặc điều chỉnh ngưỡng bằng baseline của mình.
+  note: Ngưỡng 3000ms là hợp lý vì load test hiện tại (latency ~ 500-1500ms) đáp ứng tốt. Error budget = 0.5%, nếu hệ thống nhận 1 triệu requests/tháng thì được phép tối đa 5000 requests vượt ngưỡng hoặc gặp lỗi.
 guardrails:
   error_rate_pct_max: 2
   daily_cost_usd_max: 2.5
